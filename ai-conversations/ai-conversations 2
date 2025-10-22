@@ -1,0 +1,21 @@
+----------------------------------
+Tool: ChatGPT  
+Date: 2025-10-18  
+----------------------------------
+
+Topic: Creating weather charts
+
+Me: I have weather data from wttr.in. How can I show it visually for my assignment?
+
+AI: You can use Matplotlib to generate charts. A bar chart works well for temperature, a blue-shaded bar for rainfall, and a smooth line or area chart for wind speed.
+
+Me: I already have daily maximum and minimum temperatures. How do I make the chart look more realistic?
+
+AI: You can create grouped bars for each day — one for min and one for max temperature. Add color themes that match the weather, like orange for warmth and blue for coolness. Label the bars with temperature values using `plt.text()` for clarity.
+
+Me: That’s great. I’ll use different colors for each weather feature. Should I use the same style for rain and wind?
+
+AI: Not exactly. Use a vertical bar chart for rainfall, and an area or line plot for wind — it shows flow and variation better.
+
+Summary:  
+This discussion helped design three distinct weather visualizations using Matplotlib: a dual-bar temperature chart, rainfall bars with blue intensity, and a smooth area plot for wind speed.
