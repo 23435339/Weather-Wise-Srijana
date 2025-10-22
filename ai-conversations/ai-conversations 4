@@ -1,0 +1,24 @@
+----------------------------------
+Tool: ChatGPT  
+Date: 2025-10-20  
+----------------------------------
+
+Topic: Designing the main menu
+
+Me: I want to make a main menu so users can choose between asking questions or viewing charts. Should I use ipywidgets or a simple text menu?
+
+AI: It depends. ipywidgets makes it look modern and interactive, but it might complicate things if you’re using Google Colab or saving to GitHub. A text-based menu using `pyinputplus` is simpler and runs everywhere.
+
+Me: I was thinking of keeping it minimal with options like:
+1 - Ask question  
+2 - Temperature chart  
+3 - Rainfall chart  
+4 - Wind chart  
+5 - Exit
+
+AI: That’s a great structure. Use a `while True` loop so the menu keeps appearing after each selection until the user exits.
+
+Me: Got it. I’ll stick to the text version for reliability.
+
+Summary:  
+This chat finalized the structure of the Weather Wise main menu using a loop-based command interface instead of ipywidgets for better compatibility and simplicity.
