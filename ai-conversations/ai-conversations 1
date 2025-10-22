@@ -1,0 +1,21 @@
+----------------------------------
+Tool: ChatGPT  
+Date: 2025-10-16  
+----------------------------------
+
+Topic: Choosing a weather data source
+
+Me: I need to fetch real weather data for my Weather Wise project. Which API should I use — wttr.in or OpenWeatherMap?
+
+AI: Both can work, but it depends on what you need. wttr.in is a quick option — it’s free, needs no API key, and gives you a simple 3-day JSON forecast. OpenWeatherMap, on the other hand, gives you more data such as humidity, pressure, and extended forecasts, but you need to register for an API key.
+
+Me: I’d prefer something simple that runs without registration. I just need temperature, rain, and wind data.
+
+AI: Then wttr.in is the better option. It’s ideal for classroom projects, works with a simple `requests.get()` call, and fits your 3-day visualization requirement.  
+
+Me: That sounds good. I’ll use wttr.in for now and maybe switch to OpenWeatherMap if I expand the app later.
+
+AI: That’s a good approach — start lightweight, and upgrade when you need more precision or historical data.
+
+Summary:  
+The conversation helped decide to use wttr.in as the weather data source because it’s simpler, requires no setup, and meets the 3-day forecast limit for the Weather Wise project.
