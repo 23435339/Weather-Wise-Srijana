@@ -1,0 +1,84 @@
+Example 1 – Improved Weather Data Fetching
+
+Before:
+
+def get_weather_data(location):
+    url = f"https://wttr.in/{location}?format=j1"
+    response = requests.get(url)
+    data = response.json()
+    return data
+
+Issue:
+The program crashed when the API call failed or if the user entered an invalid city
+
+After:
+
+def get_weather_data(location, forecast_days=3):
+    url = f"https://wttr.in/{location}?format=j1"
+    try:
+        result = requests.get(url)
+        result.raise_for_status()
+        data = result.json()
+        data['weather'] = data['weather'][:forecast_days]
+        return data
+    except Exception as error:
+        print(f"Unable to retrieve forecast: {error}")
+        return None
+
+Outcome:
+The function now gracefully handles network errors and ensures only the required 3-day forecast is returned.
+
+
+
+Example 2 – Fixing Chart Freeze Issue
+
+Before:
+
+def create_temperature_visualisation(weather_data):
+    plt.bar(dates, temps)
+    plt.show()
+
+Problem:
+The main menu froze until the chart window was closed manually.
+After:
+
+def create_temperature_visualisation(weather_data):
+    plt.bar(dates, temps, color='orange')
+    plt.xlabel("Date")
+    plt.ylabel("Temperature (°C)")
+    plt.title("Daily Temperature Overview")
+    plt.grid(True)
+    plt.show(block=False)
+    plt.pause(0.001)
+
+Outcome: Charts open without freezing the menu, allowing continuous interaction after plotting.
+
+Example 3 – Enhanced Weather Menu Loop 
+
+Before:
+
+def weather_menu():
+    print("1 - Temperature Chart")
+    print("2 - Exit")
+    choice = input("Enter choice: ")
+
+Problem: The menu appeared only once, requiring manual rerun for each action.
+
+After:
+
+def weather_menu():
+    while True:
+        print("\n=== Weather Wise ===")
+        print("1 - Ask Weather Question")
+        print("2 - Temperature Chart")
+        print("3 - Precipitation Chart")
+        print("4 - Wind Chart")
+        print("5 - Exit")
+
+        choice = pyip.inputChoice(['1', '2', '3', '4', '5'])
+        if choice == '5':
+            print("Exiting Weather Wise... Stay weather-smart!")
+            break
+        # ... chart and question logic ...
+
+Outcome: The menu now continuously reappears after each action, improving usability.
