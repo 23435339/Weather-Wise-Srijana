@@ -1,63 +1,85 @@
-# 🌦️ WeatherWise Template
+ 🌦️ WeatherWise Template
 
-Welcome to the **WeatherWise Assignment Starter Template**! This repository helps you kickstart your project by combining Python, weather APIs, data visualisation, and AI-assisted development. 🤖📊
+ 📘 Overview
+Weather Wise is a Python-based weather forecasting advisor that retrieves real-time weather data through the wttr.in API. It allows users to ask weather-related questions in natural language, view 3-day forecasts, and visualize temperature, rainfall, and wind trends using data-driven charts.
+Developed as part of an academic assignment, this project demonstrates modular programming, API integration, data visualization, and AI-assisted development through ChatGPT.
 
-![Build With AI](https://img.shields.io/badge/Built_with-AI-blueviolet?logo=openai)
-![Python](https://img.shields.io/badge/Made_with-Python-3776AB?logo=python)
-![Visualisation](https://img.shields.io/badge/Includes-Visualisations-orange?logo=plotly)
+⚙️ Features
+* Retrieves accurate 3-day weather forecasts using the wttr.in API
+* Displays temperature, rainfall, and wind speed charts using matplotlib
+* Accepts natural-language weather questions (e.g., “Will it rain tomorrow?”)
+* Performs input validation using pyinputplus for reliable interaction
+* Handles API errors and missing data gracefully
+* Provides a menu-based interface for simple user navigation
 
----
+🧠 AI Assistance
+AI tools, primarily ChatGPT  were used strategically during development to support:
+* Selecting and comparing APIs (wttr.in vs. OpenWeatherMap)
+* Designing pseudocode for the parse_weather_question() function
+* Simplifying the user interface from widgets to a loop-based menu system
+* Fixing Matplotlib blocking issues when displaying charts
+The AI-assisted approach ensured that the final design was clear, error-free, and modular while maintaining academic originality.
 
-## 🚀 How to Use This Template
+🧩 Technology Stack
+Category	Tools / Libraries
+Language	Python 3.x
+API	wttr.in (free, no key required)
+Data Handling	requests
+User Input	pyinputplus
+Visualization	matplotlib
+AI Support	ChatGPT, 
 
-1. Click **"Use this template"** on GitHub to create your own copy.
-2. Rename your repository to something like `weatherwise-jane-doe`.
-3. Clone it and start developing in `starter_notebook.ipynb`.
+▶️ How to Run
 
----
+Clone or download the repository:
 
-## 📁 Folder Structure
+Install required libraries:
 
-- `starter_notebook.ipynb` — Main notebook to build your project.
-- `ASSIGNMENT.md` — Full assignment specification.
-- `ai-conversations/` — Save your `.txt` AI conversations here.
-- `resources/` — Guides, prompting tips, and AI technique examples.
-- `submission/` — Files to help you finalise your submission:
-  - `checklist-md.md` — Submission checklist
-  - `reflection.md` — Write your 300–500 word project reflection
-  - `one-page-summary.md` — (Optional) Your own summary of key ideas or process
+Run the app: (or open the notebook in JupyterLab / Google Colab)
 
----
+📊 Data Visualizations
+* Temperature Trend Line Chart: Shows min and max daily temperatures
+* Precipitation Bar Chart: Displays daily rainfall data
+* Wind Speed Chart: Visualizes changes in wind speed over 3 days
+* All visualizations are rendered interactively without freezing the menu (non-blocking mode).
 
-📄 **Quick Overview:**  
-A one-page summary of the full assignment is available in [`resources/assignment-summary.md`](resources/assignment-summary.md).
-
----
-
-## 📓 Submission Checklist
-
-✅ Complete all required functions  
-✅ Include at least 5 AI conversations in `ai-conversations/`  
-✅ Document your intentional prompting  
-✅ Fill in your project reflection in `submission/reflection-template.md`  
-✅ Zip your project and upload it to the LMS  
-
----
-
-🧠 AI Conversations  
-Save your AI interactions in the `ai-conversations/` folder.  
-See `ai-conversations/how-to-log-ai-conversations.md` for details.
+📂 Project Structure
 
 
---
-## 🧠 Need Help with AI Prompts?
+ai-conversations
+Six-step methodology
+ai-conversations 1
+ai-conversations 2
+ai-conversations 3
+ai-conversations 4
+ai-conversations 5
+before and after example
+how-to-log-ai-conversations.txt
+resources
+ai-tips-tricks.md
+assignment-summary.md
+before-after-example.md
+fetch-my-weather-llm-guide.md
+hands-on-ai-llm-guide.md
+prompt-by-method-step.md
+python-intentional-prompting.md
+sample-prompting-journey.md
+template-repository-beginners-guide.md
+submission
+checklist.md
+reflection.md
+.gitignore
+ASSIGNMENT.md
+README.md
+starter_notebook.ipynb
 
-Check out:
-Check out:
-- `resources/ai-tips-tricks.md` — Prompting tips and pitfalls
-- `resources/sample-prompting-journey.md` — Full example of AI-enhanced development
-- `resources/prompts-by-method-step.md` — Prompts aligned with the 6-step dev process
-- `resources/before-after-example.md` — Required: Show how your prompting improved AI-generated code
+💡 Future Enhancements
+* Add support for multi-word city names (e.g., “New York”)
+* Implement a combined temperature–rainfall visualization
+* Introduce speech-based input or GUI widgets
+* Log all user interactions into a history file for insights
 
-
-Good luck and have fun! 💡🌤️
+Author: Srijana Panday
+Institution: Curtin University, 
+ Date: 22 October 2025
+ Project: Weather Wise 
