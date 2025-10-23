@@ -82,3 +82,21 @@ def weather_menu():
         # ... chart and question logic ...
 
 Outcome: The menu now continuously reappears after each action, improving usability.
+
+
+Example 5 – Polished Chart Design
+
+Before:
+plt.plot(days, temps)
+plt.show()
+
+After:
+plt.plot(days, max_temps, label='Max Temp (°C)', marker='o', color='#FF9800')
+plt.plot(days, min_temps, label='Min Temp (°C)', marker='o', color='#2196F3')
+plt.xlabel('Date')
+plt.ylabel('Temperature (°C)')
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.show(block=False)
+
+Outcome: The graph now includes labels, color themes, and legends — creating a clean, professional visual that matches the “Weather Wise” design.
