@@ -1,0 +1,78 @@
+Six-Step Methodology for weather_menu()
+
+Step 1 – Requirement Definition
+The main goal was to design an interactive text-based menu that would allow users to easily access all core functions of the Weather Wise application. The menu needed to:
+* Let users ask weather-related questions using either custom input or predefined queries.
+* Display visual weather charts (temperature, precipitation, and wind).
+* Continuously loop until the user chooses to exit.
+* Handle invalid input or missing data gracefully without crashing.
+This design aimed to make the program easy to navigate, even for beginners, while providing a clear structure to integrate all major features of the project.
+
+
+Step 2 – Research
+Research focused on identifying reliable and user-friendly methods for building console-based interactive menus in Python.
+Several input handling libraries were reviewed, and PyInputPlus (pyip) was chosen for its simplicity and built-in validation capabilities.
+The structure was inspired by standard console menus found in beginner-friendly applications — with clear numbered options and looping logic.
+Key challenges considered included keeping the interface responsive, displaying charts without freezing, and ensuring smooth data retrieval from the wttr.in API.
+
+Step 3 – Design
+The menu was designed using a while loop structure, allowing the interface to remain active until the user exits.
+The options were divided into five parts:
+Ask a Weather Question
+Display Temperature Chart
+Display Precipitation Chart
+Display Wind Chart
+Exit the Program
+The flow included:
+Asking for the city name.
+Fetching the weather data for 3 days (to align with wttr.in).
+Handling invalid data through conditional checks.
+Calling the correct function based on the user’s choice.
+Returning to the main menu after completing each action.
+
+Step 4 – Implementation
+The design was implemented in Python using the following code structure:
+def weather_menu():
+    while True:
+        print("\n=== Weather Wise ===")
+        print("1 - Ask Weather Question")
+        print("2 - Temperature Chart")
+        print("3 - Precipitation Chart")
+        print("4 - Wind Chart")
+        print("5 - Exit")
+
+        choice = pyip.inputChoice(['1','2','3','4','5'], prompt="Your selection (1-5): ")
+
+        if choice == '5':
+            print("\nExiting Weather Wise... Stay weather-smart!\n")
+            break
+
+        city = pyip.inputStr(prompt="Enter the city name: ") or "Perth"
+        data = get_weather_data(city, forecast_days=3)
+
+        if not data:
+            print("Unable to fetch weather data at the moment.")
+            continue
+
+        if choice == '1':
+            # Predefined question options
+            questions = [...]
+            # User selects a question
+            ...
+        elif choice == '2':
+            create_temperature_visualisation(data)
+        elif choice == '3':
+            create_precipitation_visualisation(data)
+        elif choice == '4':
+            create_wind_visualisation(data)
+
+Step 5 – Testing
+The menu was tested using various scenarios to ensure smooth operation:
+Valid city names: Confirmed correct data retrieval for cities like Perth, Sydney, and Melbourne.
+Invalid inputs: Tested with misspelled cities and non-numeric menu inputs to verify error handling.
+Question section: Verified that selecting any of the 12 predefined questions generated accurate and relevant responses.
+Charts: Checked that temperature, precipitation, and wind charts displayed correctly without freezing the interface.
+Exit option: Confirmed that choosing “5” terminated the loop cleanly and printed a proper exit message.
+All features worked as expected across multiple test runs.
+
+
